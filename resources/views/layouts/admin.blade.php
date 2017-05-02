@@ -45,19 +45,25 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-                    @can('post')
+                    @can('dashboard')
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="{{url('/painel')}}">Home</a></li>
+                    @endcan
+                    @can('administrador')
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                         <li><a href="{{url('/painel/users/')}}">Criar</a></li>
                         <li><a href="{{url('/painel/users')}}">Listar usuarios</a></li></ul>
                         </li>
+                    @endcan
+                    @can('comunicacao')
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Comunicação <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{url('/painel/posts/create')}}">Publicar</a></li>
                                     <li><a href="{{url('/painel/posts')}}">Posts</a></li></ul>
                         </li>
+                    @endcan
+                    @can('administrador')
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                         <li><a href="{{url('/painel/permissions')}}">Permissões</a></li>
